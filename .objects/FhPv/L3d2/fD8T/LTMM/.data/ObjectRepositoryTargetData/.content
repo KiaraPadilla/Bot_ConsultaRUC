@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="uWKo8Ra1dEOfPFDywR3sjw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" DesignTimeRectangle="894, 549, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='6' tag='P' /&gt;" Guid="c4738cbb-713d-4436-b8b8-d1f5c3c3b998" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f78a73e7915f922d3ac22f89415667e4.jpg" xmlns="">0g3uWG2Krek67ed2I0ThvHQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

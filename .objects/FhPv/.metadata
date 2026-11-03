@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome SUNAT - Consulta Ruc",
+  "Type": "App",
+  "Id": "FhPv_fDfl0WDyk7iB34CMA",
+  "Reference": "EpGrxpXJP0ukFH-KbWsRZQ/FhPv_fDfl0WDyk7iB34CMA",
+  "Created": "2026-11-03T03:52:25.8842422Z",
+  "Updated": "2026-11-03T03:52:25.8842422Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

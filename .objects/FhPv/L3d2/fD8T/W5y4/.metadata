@@ -1,0 +1,14 @@
+﻿{
+  "Name": "SOCIEDAD ANONIMA ABIERTA",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "W5y4twwXjkKAaJ2P5cXtGQ",
+  "Reference": "EpGrxpXJP0ukFH-KbWsRZQ/W5y4twwXjkKAaJ2P5cXtGQ",
+  "ParentRef": "EpGrxpXJP0ukFH-KbWsRZQ/fD8TO8OB_02gDYvbbZfS9w",
+  "Created": "2026-11-03T04:43:05.5807483Z",
+  "Updated": "2026-11-03T04:43:05.5807483Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

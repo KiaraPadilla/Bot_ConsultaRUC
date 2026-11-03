@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ConsultarRUC" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ConsultarRUC" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_Exito" Type="OutArgument(x:Boolean)" />
     <x:Property Name="io_dtResultado" Type="InOutArgument(sd:DataTable)" />
@@ -40,6 +40,17 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,24 +104,244 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConsultarRUC" sap:VirtualizedContainerService.HintSize="897.2,1064.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="ConsultarRUC" sap:VirtualizedContainerService.HintSize="818,2256.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="451.2,1041.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="521.6,2233.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="449.6,445.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="520,1918.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strNumRuc" />
+            <Variable x:TypeArguments="x:String" Name="strTipo" />
+            <Variable x:TypeArguments="x:String" Name="strFechaIns" />
+            <Variable x:TypeArguments="x:String" Name="strEstado" />
+            <Variable x:TypeArguments="x:String" Name="strCondicion" />
+            <Variable x:TypeArguments="x:String" Name="strDomicilio" />
+            <Variable x:TypeArguments="x:String" Name="strActividad" />
+            <Variable x:TypeArguments="x:String" Name="strRepresentantes">
+              <Variable.Default>
+                <Literal x:TypeArguments="x:String" Value="" />
+              </Variable.Default>
+            </Variable>
+          </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Ruc, &quot;PENDIENTE&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, Now.ToString(&quot;yyyy-MM-dd HH:mm&quot;), &quot;Stub&quot;}]" DataTable="[io_dtResultado]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome SUNAT - Consulta Ruc" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="486.4,1590.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="0b10a2e9-7a05-405d-bc5e-a6b661352697" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="484.8,1387.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGoToUrl DisplayName="Ir a URL - sunat.gob.pe" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" Url="https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaWeb.jsp" Version="V5" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT txtRuc'" EmptyFieldMode="[UiPath.UIAutomationNext.Enums.NEmptyFieldMode.SingleLine]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" Text="[in_Ruc]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaWeb.jsp" ContentHash="aiS_Fam89kSWueLcHpE91w" DesignTimeRectangle="629, 332, 748, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='txtRuc' tag='INPUT' /&gt;" Guid="b73ea6b1-0bc9-4a13-8315-34341eab6301" InformativeScreenshot="710b8e18ff9facb41ec7f43f6c85630f.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/O2YKqzJ8jE-H-lHarmw8Ew" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta Ruc' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="300" Y="14" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Resuelve el captcha y pulsa Buscar para el RUC &quot; &amp; in_Ruc]" />
+                  <uix:NCheckState DisplayName="Comprobar estado de aplicación 'Buscar'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" Timeout="120" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="649.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="649.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New Exception(&quot;Captcha no resuelto a tiempo&quot;)]" sap:VirtualizedContainerService.HintSize="616,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="jIIVsxw5bkShXVHN4wTtDA" DesignTimeRectangle="894, 265, 792, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='2' tag='H4' /&gt;" Guid="c23781e7-2db4-4274-8c10-0a946f73e43a" InformativeScreenshot="08fed8d5b2474e053ac199c0d2991ae7.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/fZdft96QEkqFHNekYwdDkQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <uix:NGetText DisplayName="Obtener texto 'Buscar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strNumRuc]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="jIIVsxw5bkShXVHN4wTtDA" DesignTimeRectangle="894, 265, 792, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='2' tag='H4' /&gt;" Guid="c23781e7-2db4-4274-8c10-0a946f73e43a" InformativeScreenshot="08fed8d5b2474e053ac199c0d2991ae7.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/fZdft96QEkqFHNekYwdDkQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto 'SOCIEDAD ANONIMA ABIERTA'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strTipo]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="9DjCmDlfpU61xHaxaoGrxw" DesignTimeRectangle="894, 322, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" Guid="12c8c575-62a8-450d-8ed9-bfa49e2e7d81" InformativeScreenshot="a504143a9bc072d2b9848f9e9c0d1575.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/W5y4twwXjkKAaJ2P5cXtGQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto '09101992'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strFechaIns]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="5mHk6uU_FE-1S3uw0W6qew" DesignTimeRectangle="657, 436, 318, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='3' tag='P' /&gt;" Guid="eead59d9-f4b2-4377-aebc-70dcd106aa86" InformativeScreenshot="c5f5ee62030afa231034cf0d695d4b4d.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/PGPV8C0Ak0ypfJeobj2lWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto 'ACTIVO'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,142.4" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strEstado]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="pvXJKSnyHESWxHKl0U9EmQ" DesignTimeRectangle="894, 492, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='5' tag='P' /&gt;" Guid="7d825173-f5c9-400e-b801-bbb338e8c40a" InformativeScreenshot="dc9c8d8fd234ab36a175962f7405c598.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/IT5zmj7pV0K_Hl9yc-vo3A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto 'HABIDO'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,142.4" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strCondicion]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="uWKo8Ra1dEOfPFDywR3sjw" DesignTimeRectangle="894, 549, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='6' tag='P' /&gt;" Guid="c4738cbb-713d-4436-b8b8-d1f5c3c3b998" InformativeScreenshot="f78a73e7915f922d3ac22f89415667e4.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/LTMM0h5ks0mgXLQzlxRlXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto 'AV. ARGENTINA NRO. 4793…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,142.4" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strDomicilio]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="F7S_Tp9cukiLg8iNunn1rg" DesignTimeRectangle="894, 606, 792, 45" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='7' tag='P' /&gt;" Guid="fdf01d4f-3d02-48b0-8dcf-69e15427a8ec" InformativeScreenshot="eef2b60b14f3f017a12d9820d698722d.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/keV8dqUpr0-r-mBOSnLLsg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Obtener texto 'Principal - 1040 - ELAB…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,142.4" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="0b10a2e9-7a05-405d-bc5e-a6b661352697" TextString="[strActividad]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias" ContentHash="ltwymT2jM0quS6If7ykxJQ" DesignTimeRectangle="894, 690, 792, 46" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" Guid="ca867e1d-ff55-4526-99d6-12ae2e9e4053" InformativeScreenshot="3471e76c5af9c4e6a6625ebaec53d47f.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/_6DbjYYpGUyGROdymS_FHg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SUNAT - Consulta RUC' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <If Condition="[String.IsNullOrWhiteSpace(strNumRuc) OrElse String.IsNullOrWhiteSpace(strEstado)]" sap:VirtualizedContainerService.HintSize="451.2,360" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New Exception(&quot;Ficha incompleta: no se pudieron leer los datos&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Throw>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-9, -9, 1938, 1098" BrowserType="Chrome" ContentHash="a9wIFKJF9UGcbAC03mlthQ" IconBase64="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" InformativeScreenshot="fc1eae691bd38d18c009c7364789cfff.jpg" Reference="EpGrxpXJP0ukFH-KbWsRZQ/fD8TO8OB_02gDYvbbZfS9w" Selector="&lt;html app='chrome.exe' title='SUNAT - Consulta Ruc' /&gt;" Url="https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaWeb.jsp" Version="V3">
+                <uix:TargetApp.SapInfo>
+                  <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+                </uix:TargetApp.SapInfo>
+              </uix:TargetApp>
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Ruc, strNumRuc.Substring(strNumRuc.IndexOf(&quot;-&quot;) + 1).Trim, strTipo.Trim, strEstado.Trim, strCondicion.Trim, strDomicilio.Trim, strActividad.Trim, strFechaIns.Trim, strRepresentantes, Now.ToString(&quot;yyyy-MM-dd HH:mm&quot;), &quot;OK&quot;}]" DataTable="[io_dtResultado]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="486.4,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataRow>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="486.4,48" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Exito]</OutArgument>
             </Assign.To>
@@ -126,27 +357,41 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Capturar" sap:VirtualizedContainerService.HintSize="449.6,445.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Capturar" sap:VirtualizedContainerService.HintSize="520,164.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Ruc, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, Now.ToString(&quot;yyyy-MM-dd HH:mm&quot;), exception.Message}]" DataTable="[io_dtResultado]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Ruc, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, Now.ToString(&quot;yyyy-MM-dd HH:mm&quot;), exception.Message}]" DataTable="[io_dtResultado]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="486.4,56.8" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataRow>
+              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="486.4,48" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[out_Exito]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
                 </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </Assign>
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="520,24.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "ACTIVO",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "IT5zmj7pV0K_Hl9yc-vo3A",
+  "Reference": "EpGrxpXJP0ukFH-KbWsRZQ/IT5zmj7pV0K_Hl9yc-vo3A",
+  "ParentRef": "EpGrxpXJP0ukFH-KbWsRZQ/fD8TO8OB_02gDYvbbZfS9w",
+  "Created": "2026-11-03T04:44:24.2681287Z",
+  "Updated": "2026-11-03T04:44:24.2681287Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
