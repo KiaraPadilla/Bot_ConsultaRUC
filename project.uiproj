@@ -1,0 +1,6 @@
+{
+  "Name": "Bot_ConsultaRUC",
+  "ProjectType": "Process",
+  "Description": "",
+  "MainFile": "Main.xaml"
+}
