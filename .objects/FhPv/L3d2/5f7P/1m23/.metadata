@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Clic 'Representante(s) Legal(…'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "1m23FqtgRkKbqDIpZryMEw",
+  "Reference": "EpGrxpXJP0ukFH-KbWsRZQ/1m23FqtgRkKbqDIpZryMEw",
+  "ParentRef": "EpGrxpXJP0ukFH-KbWsRZQ/5f7Ph9TTeEW_vi0Rf3vGmw",
+  "Created": "2026-11-04T00:53:19.0242496Z",
+  "Updated": "2026-11-04T00:53:19.0242496Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

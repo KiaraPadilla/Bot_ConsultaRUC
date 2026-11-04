@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Representante(s) Legal(…",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "SxJ_aCqb_E6Yag8tHJrneA",
+  "Reference": "EpGrxpXJP0ukFH-KbWsRZQ/SxJ_aCqb_E6Yag8tHJrneA",
+  "ParentRef": "EpGrxpXJP0ukFH-KbWsRZQ/fD8TO8OB_02gDYvbbZfS9w",
+  "Created": "2026-11-04T00:09:31.9498764Z",
+  "Updated": "2026-11-04T00:09:31.9498764Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

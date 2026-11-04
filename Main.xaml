@@ -274,7 +274,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="451.2,113.6" sap2010:WorkflowViewState.IdRef="Delay_2">
+            <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="486.4,113.6" sap2010:WorkflowViewState.IdRef="Delay_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -290,7 +290,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:WriteRange DataTable="[dtResultado]" DisplayName="Escribir libro de intervalo" sap:VirtualizedContainerService.HintSize="521.6,278.4" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Resultado" StartingCell="A1" WorkbookPath="Data\resultado_ruc.xlsx">
+    <ui:WriteRange DataTable="[dtResultado]" DisplayName="Escribir libro de intervalo" sap:VirtualizedContainerService.HintSize="521.6,278.4" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Resultado" StartingCell="A1" WorkbookPath="[&quot;Data\resultado_ruc_&quot; &amp; Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) &amp; &quot;.xlsx&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
